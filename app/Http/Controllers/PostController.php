@@ -13,4 +13,11 @@ class PostController extends Controller
         //getPaginateByLimit()はPost.phpで定義したメソッドです。
         
     }
+    
+    public function show(Post $post)
+    {
+        return view('posts.show')->with(['post' => $post]);
+        //'post.show'はpostフォルダ内のshow.blade.php
+        //'post'はbladeファイルで使う変数。中身は$postはid=1のPostインスタンス。
+    }
 }
