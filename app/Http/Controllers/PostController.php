@@ -20,4 +20,9 @@ class PostController extends Controller
         //'post.show'はpostフォルダ内のshow.blade.php
         //'post'はbladeファイルで使う変数。中身は$postはid=1のPostインスタンス。
     }
+    
+    public function create()
+    {
+        return view('posts.create');
+    }
 }
