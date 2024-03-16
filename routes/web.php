@@ -25,3 +25,6 @@ Route::post('/posts', [PostController::class, 'store']);
 //editのルート
 Route::get('/posts/{post}/edit',[PostController::class, 'edit']);
 Route::put('/posts/{post}',[PostController::class, 'update']);
+
+//投稿の削除
+Route::delete('/posts/{post}', [PostController::class, 'delete']);
