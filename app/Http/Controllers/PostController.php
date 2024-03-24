@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests\PostRequest;
 use App\Models\Post;
 
+use App\Models\Category;
+
 class PostController extends Controller
 {
      public function index(Post $post)
@@ -22,12 +24,17 @@ class PostController extends Controller
         //'post'はbladeファイルで使う変数。中身は$postはid=1のPostインスタンス。
     }
     
-    public function create()
+    // public function create()
+    // {
+    //     return view('posts.create');
+    // }
+    
+     public function create(Category $category)
     {
-        return view('posts.create');
+        return view('posts.create')->with(['categories'=>$category->get()]);
     }
     
-   public function store(PostRequest $request, Post $post)
+  public function store(PostRequest $request, Post $post)
     {
     $input = $request['post'];
     $post->fill($input)->save();
