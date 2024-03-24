@@ -8,7 +8,7 @@
     </head>
     <body>
         <h1>Blog Name</h1>
-        <a href='/posts/create'>[create]</a>
+        <a href='/posts/create'>create</a>
         <div class='post'>
             @foreach($posts as $post)
                 <div class='post'>
@@ -26,6 +26,9 @@
                     </form>
                 </div>
             @endforeach
+        </div>
+        <div class="footer">
+            <a href="/">戻る</a>
         </div>
         <div class='paginate'>
             {{ $posts->links() }}

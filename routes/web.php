@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
-
+use App\Http\Controllers\CategoryController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,3 +28,6 @@ Route::put('/posts/{post}',[PostController::class, 'update']);
 
 //投稿の削除
 Route::delete('/posts/{post}', [PostController::class, 'delete']);
+
+//CategoryControllerのルート
+Route::get('/categories/{category}', [CategoryController::class, 'index']);
