@@ -5,8 +5,9 @@
         <title>Blog</title>
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        <link rel="stylesheet" href="{{ asset('/css/pagination.css') }}"/>
     </head>
-    <x-app-layout>
+
         <x-slot name="header">
             index
         </x-slot>
@@ -31,9 +32,9 @@
                     </div>
                 @endforeach
             </div>
-            <div class='paginate'>
+            <ul class="pagination">
                 {{ $posts->links() }}
-            </div>
+            </ul>
             <!-- Javascript この位置に書くことで先にCSSを読み込み，速度上がる -->
             <script>
                 function deletePost(id){
@@ -46,6 +47,6 @@
             </script>
             <p>{{ Auth::user()->name }}</p>
         </body>
-    </x-app-layout>
+
 </html>
 
