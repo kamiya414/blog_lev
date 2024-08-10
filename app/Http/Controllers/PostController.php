@@ -38,6 +38,7 @@ class PostController extends Controller
     {
     $input = $request['post'];
     $post->fill($input)->save();
+    // $post->create($input);
     return redirect('/posts/' . $post->id);
     }
     
@@ -58,5 +59,11 @@ class PostController extends Controller
     {
         $post->delete();
         return redirect('/');
+    }
+    
+    public function star(Post $post)
+    {
+        return view('star.star');  
+        
     }
 }
